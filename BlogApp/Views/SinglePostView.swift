@@ -10,22 +10,27 @@ import SwiftUI
 struct SinglePostView: View {
     var model: PostModel
     var body: some View {
-        VStack() {
-            Image(model.imageName)
-                .resizable()
-                .scaledToFit()
+        ScrollView {
             VStack(alignment: .leading) {
+              
+                Image(model.imageName)
+                    .resizable()
+                    .scaledToFit()
+                
                 Text(model.title)
                     .font(.title2)
                     .bold()
                     .padding(3)
-                Text(model.content)
-                    .padding(3)
-                    .multilineTextAlignment(.leading)
 
+                    
+                Text(model.content)
+                        .padding(3)
+                        .multilineTextAlignment(.leading)
+                
             }
-            Spacer()
+            
         }
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
     }
 }
 

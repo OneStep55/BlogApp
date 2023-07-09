@@ -14,4 +14,9 @@ struct PostModel {
     var content: String
     var autor: String
     var date: String
+    var isFavoirte: Bool = false
+    
+    mutating func changeIsFavorite() {
+        isFavoirte.toggle()
+    }
 }
